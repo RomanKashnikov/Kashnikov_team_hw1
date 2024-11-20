@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -33,25 +34,39 @@ void menu() {
     cout << "0 - Exit" << endl << endl;
 }
 
+void gen_manu() {
+    cout << ""
+}
+
 
 int main()
 {
+    int first_set;
+    int second_set;
+
     while (1) {
         menu();
 
         int option;
-        option = input_validation<int>("Choose the option:  ", 0, 7);
+        option = input_validation<int>("Choose the option:  ", 0, 5);
 
         switch (option) {
         case 0:
             cout << "App is closed" << endl;
             return 0;
         case 1:
-
+            cout << "Enter amount of peaks" << endl << endl;
+            first_set = input_validation<int>("In first set:  ", 0, 10000000);
+            second_set = input_validation<int>("In second set:  ", 0, 10000000);
+            vector<vector<int>> generateBipartiteGraphMatrix(const int& first_set, const int& second_set);
         case 2:
+
         case 3:
+
         case 4:
+
         case 5:
+
         }
     }
 }
