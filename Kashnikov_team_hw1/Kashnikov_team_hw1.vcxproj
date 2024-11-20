@@ -131,6 +131,9 @@
     <ClCompile Include="test.cpp" />
     <ClCompile Include="graph_gen_by_ordin.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

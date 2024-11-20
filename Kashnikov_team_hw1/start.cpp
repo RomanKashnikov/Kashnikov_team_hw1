@@ -41,5 +41,15 @@ int main()
 
         int option;
         option = input_validation<int>("Choose the option:  ", 0, 7);
+
+        switch (option) {
+        case 0:
+        case 1:
+
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        }
     }
 }
