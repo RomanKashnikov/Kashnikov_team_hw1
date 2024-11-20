@@ -44,6 +44,8 @@ int main()
 
         switch (option) {
         case 0:
+            cout << "App is closed" << endl;
+            return 0;
         case 1:
 
         case 2:
