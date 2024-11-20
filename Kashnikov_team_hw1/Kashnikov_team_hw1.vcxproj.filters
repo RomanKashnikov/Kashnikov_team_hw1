@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Kashnikov_team_hw1.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="start.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
