@@ -36,7 +36,7 @@ void menu() {
 
 void gen_manu() {
     cout << ""
-}
+};
 
 
 int main()
