@@ -27,6 +27,8 @@ T input_validation(const string message, const int min, const int max) {
     cerr << value << endl;
     return value;
 }
+
+
 void vivod(vector<vector<int> > &matrix ) {
     for (int u = 0; u < n1; ++u) {
         cout << endl;
