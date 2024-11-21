@@ -1,17 +1,17 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "graph_gen_by_ordin.h"
-
 #include "kun_by_vasileva.h"
 
 
 using namespace std;
 
 
-template <typename T>
-T input_validation(const string message, const int min, const int max) {
-    T value;
+
+int input_validation(const string& message, const int& min, const int& max) {
+    int value;
 
     cout << message;
     while ((cin >> value).fail()
@@ -24,19 +24,19 @@ T input_validation(const string message, const int min, const int max) {
     }
     cin.clear();
     cin.ignore(10000, '\n');
-    cerr << value << endl;
     return value;
 }
 
 
-void vivod(vector<vector<int> > &matrix ) {
-    for (int u = 0; u < n1; ++u) {
+void vivod(vector<vector<int>> &matrix) {
+    for (auto& row: matrix) {
         cout << endl;
-        for (int v = 0; v < n2; ++v) {
-            cout << matrix[u][v] << " ";
+        for (auto& value: row) {
+            cout << value << " ";
         }
     }
 }
+
 
 void menu() {
     cout << "Menu" << endl << endl;
@@ -49,16 +49,14 @@ void menu() {
     cout << "0 - Exit" << endl << endl;
 }
 
-    cout << ""
-}
-
 
 int main()
 {
     int first_set;
     int second_set;
 
-
+    vector<vector<int>> matrix;
+    
 
 
     while (1) {
@@ -74,9 +72,13 @@ int main()
             return 0;
         case 1:
             cout << "Enter amount of peaks" << endl << endl;
+
             first_set = input_validation<int>("In first set:  ", 0, 10000000);
             second_set = input_validation<int>("In second set:  ", 0, 10000000);
-            generateBipartiteGraphMatrix(first_set, second_set);
+
+            matrix = generateBipartiteGraphMatrix(first_set, second_set);
+
+            vivod(matrix);
             break;
         case 2:
             break;

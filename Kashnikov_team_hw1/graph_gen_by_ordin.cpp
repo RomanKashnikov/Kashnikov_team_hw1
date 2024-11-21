@@ -17,6 +17,7 @@ vector<vector<int> > generateBipartiteGraphMatrix(const int& n1, const int& n2) 
                 adjacencyMatrix[u][n1 + v] = 1;
                 adjacencyMatrix[n1 + v][u] = 1;
             }
+
         }
     }
 
