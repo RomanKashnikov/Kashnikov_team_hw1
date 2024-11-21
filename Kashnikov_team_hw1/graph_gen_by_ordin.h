@@ -5,6 +5,6 @@
 
 #define PROBABILITY 0.5
 
-std::vector<std::vector<int> > generateBipartiteGraphMatrix(int n1, int n2);
+std::vector<std::vector<int> > generateBipartiteGraphMatrix(const int& n1, const int& n2);
 
 #endif // _GRAPH_GEN_BY_ORDIN_

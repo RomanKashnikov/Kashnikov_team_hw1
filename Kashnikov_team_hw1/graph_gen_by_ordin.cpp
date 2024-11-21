@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<vector<int> > generateBipartiteGraphMatrix(int n1, int n2) {
+vector<vector<int> > generateBipartiteGraphMatrix(const int& n1, const int& n2) {
     vector<vector<int> > adjacencyMatrix(n1 + n2, vector<int>(n1 + n2, 0));
     srand(time(0));
 

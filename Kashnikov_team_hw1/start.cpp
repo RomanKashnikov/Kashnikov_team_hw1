@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "graph_gen_by_ordin.h"
+
 #include "kun_by_vasileva.h"
 
 
@@ -25,6 +27,14 @@ T input_validation(const string message, const int min, const int max) {
     cerr << value << endl;
     return value;
 }
+void vivod(vector<vector<int> > &matrix ) {
+    for (int u = 0; u < n1; ++u) {
+        cout << endl;
+        for (int v = 0; v < n2; ++v) {
+            cout << matrix[u][v] << " ";
+        }
+    }
+}
 
 void menu() {
     cout << "Menu" << endl << endl;
@@ -37,6 +47,8 @@ void menu() {
     cout << "0 - Exit" << endl << endl;
 }
 
+    cout << ""
+}
 
 
 int main()
@@ -44,11 +56,15 @@ int main()
     int first_set;
     int second_set;
 
+
+
+
     while (1) {
         menu();
 
         int option;
         option = input_validation<int>("Choose the option:  ", 0, 5);
+        system("cls");
 
         switch (option) {
         case 0:
@@ -58,15 +74,19 @@ int main()
             cout << "Enter amount of peaks" << endl << endl;
             first_set = input_validation<int>("In first set:  ", 0, 10000000);
             second_set = input_validation<int>("In second set:  ", 0, 10000000);
-            vector<vector<int>> generateBipartiteGraphMatrix(const int& first_set, const int& second_set);
+            generateBipartiteGraphMatrix(first_set, second_set);
+            break;
         case 2:
-
+            break;
         case 3:
-
+            break;
         case 4:
-
+            break;
         case 5:
-
+            break;
         }
+        cout << endl;
+        system("pause");
+        system("cls");
     }
 }
