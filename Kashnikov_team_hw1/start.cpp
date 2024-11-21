@@ -3,6 +3,7 @@
 
 #include "kun_by_vasileva.h"
 
+
 using namespace std;
 
 
@@ -36,9 +37,6 @@ void menu() {
     cout << "0 - Exit" << endl << endl;
 }
 
-void gen_manu() {
-    cout << ""
-};
 
 
 int main()
