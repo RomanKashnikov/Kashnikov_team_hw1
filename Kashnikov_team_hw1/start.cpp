@@ -45,7 +45,7 @@ void menu() {
     cout << "2 - " << endl;
     cout << "3 - " << endl;
     cout << "4 - " << endl;
-    cout << "5 - " << endl;
+    cout << "5 - " << endl << endl;
     cout << "0 - Exit" << endl << endl;
 }
 
@@ -63,7 +63,7 @@ int main()
         menu();
 
         int option;
-        option = input_validation<int>("Choose the option:  ", 0, 5);
+        option = input_validation("Choose the option:  ", 0, 5);
         system("cls");
 
         switch (option) {
@@ -73,8 +73,8 @@ int main()
         case 1:
             cout << "Enter amount of peaks" << endl << endl;
 
-            first_set = input_validation<int>("In first set:  ", 0, 10000000);
-            second_set = input_validation<int>("In second set:  ", 0, 10000000);
+            first_set = input_validation("In first set:  ", 0, 10000000);
+            second_set = input_validation("In second set:  ", 0, 10000000);
 
             matrix = generateBipartiteGraphMatrix(first_set, second_set);
 
