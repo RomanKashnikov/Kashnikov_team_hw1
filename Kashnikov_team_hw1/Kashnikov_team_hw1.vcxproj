@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Alg_gavela_hakimi_by_shakin.cpp" />
+    <ClCompile Include="hopcrofta_carpa_by_Saitov.cpp" />
     <ClCompile Include="kun_by_vasileva.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="graph_gen_by_ordin.cpp" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="Alg_gavela_hakimi_by_shakin.h" />
     <ClInclude Include="graph_gen_by_ordin.h" />
+    <ClInclude Include="hopcrofta_carpa_by_Saitov.h" />
     <ClInclude Include="kun_by_vasileva.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
