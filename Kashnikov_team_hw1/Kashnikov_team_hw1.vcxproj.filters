@@ -30,7 +30,7 @@
     <ClCompile Include="hopcrofta_carpa_by_Saitov.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Szatie_chvetkov_by_egor.cpp">
+    <ClCompile Include="Szatie_chvetkov_by_pershin.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="hopcrofta_carpa_by_Saitov.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Szatie_chvetkov_by_egor.h">
+    <ClInclude Include="Szatie_chvetkov_by_pershin.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
