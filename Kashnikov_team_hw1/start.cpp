@@ -61,13 +61,29 @@ int main()
 
     vector<vector<int>> matrix;
     
-    vector<vector<int>> test_matrix = vector<vector<0, 0, 1, 1, 0, 0>,
-                                             vector<0, 0, 0, 1, 1, 1>,
-                                             vector<1, 0, 0, 0, 0, 0>,
-                                             vector<1, 1, 0, 0, 0, 0>,
-                                             vector<0, 1, 0, 0, 0, 0>,
-                                             vector<0, 1, 0, 0, 0, 0>>
+    vector<vector<int>> test_1 = { {0, 0, 0, 1, 0, 0},
+                                   {0, 0, 0, 0, 1, 0},
+                                   {0, 0, 0, 0, 0, 1},
+                                   {1, 0, 0, 0, 0, 0},
+                                   {1, 1, 0, 0, 0, 0},
+                                   {0, 0, 1, 0, 0, 0} };
 
+    vector<vector<int>> test_2 = { {0, 0, 0, 1, 0, 0, 0},
+                                   {0, 0, 0, 1, 0, 0, 0},
+                                   {0, 0, 0, 1, 1, 1, 1},
+                                   {1, 1, 1, 0, 0, 0, 0},
+                                   {0, 0, 1, 0, 0, 0, 0},
+                                   {0, 0, 1, 0, 0, 0, 0},
+                                   {0, 0, 1, 0, 0, 0, 0} };
+
+    vector<vector<int>> test_3 = { {0, 0, 1, 1, 0, 1},
+                                   {0, 0, 0, 1, 1, 0},
+                                   {1, 0, 0, 0, 0, 0},
+                                   {1, 1, 0, 0, 0, 0},
+                                   {0, 1, 0, 0, 0, 0},
+                                   {1, 0, 0, 0, 0, 0} };
+    
+    
     while (1) {
         menu();
 
@@ -90,20 +106,36 @@ int main()
             vivod(matrix);
             break;
         case 2:
-            //cout << "Your value: " << kun_by_vasileva(test_matrix) << endl;
-            cout << endl << "True value: 4" << endl;
+            //cout << "Your value: " << kun_by_vasileva(test_1) << endl;
+            cout << endl << "True value: 3" << endl;
+            //cout << "Your value: " << kun_by_vasileva(test_2) << endl;
+            cout << endl << "True value: 2" << endl;
+            //cout << "Your value: " << kun_by_vasileva(test_3) << endl;
+            cout << endl << "True value: 2" << endl;
             break;
         case 3:
-            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_matrix) << endl;
-            cout << endl << "True value: 4" << endl;
+            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_1) << endl;
+            cout << endl << "True value: 3" << endl << endl;
+            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_2) << endl;
+            cout << endl << "True value: 2" << endl << endl;
+            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_3) << endl;
+            cout << endl << "True value: 2" << endl << endl;
             break;
         case 4:
-            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_matrix) << endl;
-            cout << endl << "True value: 4" << endl;
+            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_1) << endl;
+            cout << endl << "True value: 3" << endl << endl;
+            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_2) << endl;
+            cout << endl << "True value: 2" << endl << endl;
+            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_3) << endl;
+            cout << endl << "True value: 2" << endl << endl;
             break;
         case 5:
-            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_matrix) << endl;
-            cout << endl << "True value: 4" << endl;
+            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_1) << endl;
+            cout << endl << "True value: 3" << endl << endl;
+            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_2) << endl;
+            cout << endl << "True value: 2" << endl << endl;
+            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_3) << endl;
+            cout << endl << "True value: 2" << endl << endl;
             break;
         }
         cout << endl;
