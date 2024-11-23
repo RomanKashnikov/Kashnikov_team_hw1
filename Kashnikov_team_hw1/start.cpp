@@ -29,11 +29,12 @@ int input_validation(const string& message, const int& min, const int& max) {
 
 
 void vivod(vector<vector<int>> &matrix) {
+    cout << "Adjacency matrix:" << endl;
     for (auto& row: matrix) {
-        cout << endl;
         for (auto& value: row) {
             cout << value << " ";
         }
+        cout << endl;
     }
 }
 
@@ -42,10 +43,10 @@ void menu() {
     cout << "Menu" << endl << endl;
     cout << "1 - Generate bipartite graph" << endl << endl;
     cout << "Methods for finding the number of matchings:" << endl;
-    cout << "2 - " << endl;
-    cout << "3 - " << endl;
-    cout << "4 - " << endl;
-    cout << "5 - " << endl << endl;
+    cout << "2 - Kun" << endl;
+    cout << "3 - Hopcrofta Carpa" << endl;
+    cout << "4 - Gavela Hakimi" << endl;
+    cout << "5 - Szatie chvetkov" << endl << endl;
     cout << "0 - Exit" << endl << endl;
 }
 
@@ -57,7 +58,12 @@ int main()
 
     vector<vector<int>> matrix;
     
-
+    vector<vector<int>> test_matrix = vector<vector<0, 0, 1, 1, 0, 0>,
+                                             vector<0, 0, 0, 1, 1, 1>,
+                                             vector<1, 0, 0, 0, 0, 0>,
+                                             vector<1, 1, 0, 0, 0, 0>,
+                                             vector<0, 1, 0, 0, 0, 0>,
+                                             vector<0, 1, 0, 0, 0, 0>>
 
     while (1) {
         menu();
@@ -81,12 +87,20 @@ int main()
             vivod(matrix);
             break;
         case 2:
+            //kun_by_vasileva(test_matrix);
+            cout << endl << "True value: 4" << endl;
             break;
         case 3:
+            //hopcrofta_carpa_by_Saitov(test_matrix);
+            cout << endl << "True value: 4" << endl;
             break;
         case 4:
+            //Alg_gavela_hakimi_by_shakin(test_matrix);
+            cout << endl << "True value: 4" << endl;
             break;
         case 5:
+            //Szatie_chvetkov_by_pershin(test_matrix);
+            cout << endl << "True value: 4" << endl;
             break;
         }
         cout << endl;
