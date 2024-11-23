@@ -4,10 +4,13 @@
 
 #include "graph_gen_by_ordin.h"
 #include "kun_by_vasileva.h"
+#include "hopcrofta_carpa_by_Saitov.h"
+#include "Szatie_chvetkov_by_pershin.h"
+#include "Alg_gavela_hakimi_by_shakin.h"
+
 
 
 using namespace std;
-
 
 
 int input_validation(const string& message, const int& min, const int& max) {
@@ -87,19 +90,19 @@ int main()
             vivod(matrix);
             break;
         case 2:
-            //kun_by_vasileva(test_matrix);
+            //cout << "Your value: " << kun_by_vasileva(test_matrix) << endl;
             cout << endl << "True value: 4" << endl;
             break;
         case 3:
-            //hopcrofta_carpa_by_Saitov(test_matrix);
+            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_matrix) << endl;
             cout << endl << "True value: 4" << endl;
             break;
         case 4:
-            //Alg_gavela_hakimi_by_shakin(test_matrix);
+            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_matrix) << endl;
             cout << endl << "True value: 4" << endl;
             break;
         case 5:
-            //Szatie_chvetkov_by_pershin(test_matrix);
+            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_matrix) << endl;
             cout << endl << "True value: 4" << endl;
             break;
         }
