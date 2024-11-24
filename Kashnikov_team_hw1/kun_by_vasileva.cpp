@@ -8,6 +8,19 @@ using namespace std;
 
 const int MAXN = 1000;
 
+// Функция для преобразования матрицы смежности в список смежности
+vector<vector<int>> adjMatrixToList(const vector<vector<int>>& adj_matrix, int n) {
+    vector<vector<int>> g(n);
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (adj_matrix[i][j] == 1) {
+                g[i].push_back(j);
+            }
+        }
+    }
+    return g;
+}
+
 vector<int> g[MAXN];
 int mt[MAXN];
 bool used[MAXN];
@@ -44,28 +57,28 @@ int kuhn(int n) {
     return ans / 2;
 }
 
-int main() {
-    int n;
-    int m;
-    cout << "Vvedite kol-vo reber sprava: ";
-    cin >> n;
-    cout << "Vvedite kol-vo vershin sleva: ";
-    cin >> m;
-
-    vector<vector<int>> adj_matrix(n + m, vector<int>(n + m));
-
-    for (int i = 0; i < n + m; i++) {
-        for (int j = 0; j < n + m; j++) {
-            cout << "Vvedite " << i << j << " element matrix: ";
-            cin >> adj_matrix[i][j];
-            if (adj_matrix[i][j] == 1) {
-                g[i].push_back(j);
-            }
-        }
-    }
-
-    int max_matching = kuhn(n + m);
-    cout << "Max matching: " << max_matching << endl;
-
-    return 0;
-}
+//int main() {
+//    int n;
+//    int m;
+//    cout << "Vvedite kol-vo reber sprava: ";
+//    cin >> n;
+//    cout << "Vvedite kol-vo vershin sleva: ";
+//    cin >> m;
+//
+//    vector<vector<int>> adj_matrix(n + m, vector<int>(n + m));
+//
+//    for (int i = 0; i < n + m; i++) {
+//        for (int j = 0; j < n + m; j++) {
+//            cout << "Vvedite " << i << j << " element matrix: ";
+//            cin >> adj_matrix[i][j];
+//            if (adj_matrix[i][j] == 1) {
+//                g[i].push_back(j);
+//            }
+//        }
+//    }
+//
+//    int max_matching = kuhn(n + m);
+//    cout << "Max matching: " << max_matching << endl;
+//
+//    return 0;
+//}
