@@ -114,11 +114,11 @@ int main()
             cout << endl << "True value: 2" << endl << endl;
             break;
         case 3:
-            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_1) << endl;
+            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_1) << endl;
             cout << endl << "True value: 3" << endl << endl;
-            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_2) << endl;
+            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_2) << endl;
             cout << endl << "True value: 2" << endl << endl;
-            //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_3) << endl;
+            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_3) << endl;
             cout << endl << "True value: 2" << endl << endl;
             break;
         case 4:
