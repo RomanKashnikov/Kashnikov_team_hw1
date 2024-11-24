@@ -8,7 +8,7 @@ using namespace std;
 
 const int MAXN = 1000;
 /*
-// Функция для преобразования матрицы смежности в список смежности
+// Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГЇГ°ГҐГ®ГЎГ°Г Г§Г®ГўГ Г­ГЁГї Г¬Г ГІГ°ГЁГ¶Г» Г±Г¬ГҐГ¦Г­Г®Г±ГІГЁ Гў Г±ГЇГЁГ±Г®ГЄ Г±Г¬ГҐГ¦Г­Г®Г±ГІГЁ
 vector<vector<int>> adjMatrixToList(const vector<vector<int>>& adj_matrix, int n) {
     vector<vector<int>> g(n);
     for (int i = 0; i < n; ++i) {
@@ -59,6 +59,9 @@ int kuhn(int n) {
 }
 
 int kun_by_vasileva(vector<vector<int>> adj_matrix, int n, int m) {
+    for (int i = 0; i < n + m; ++i) {
+        g[i].clear(); // РћС‡РёС‰Р°РµРј РєР°Р¶РґС‹Р№ РІРµРєС‚РѕСЂ РІ РјР°СЃСЃРёРІРµ g
+    }
     for (int i = 0; i < n + m; i++) {
         for (int j = 0; j < n + m; j++) {
             if (adj_matrix[i][j] == 1) {
