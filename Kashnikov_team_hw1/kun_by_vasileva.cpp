@@ -13,13 +13,13 @@ const int MAXN = 1000;
 
 vector<int> g[MAXN];
 int mt[MAXN];
-bool used[MAXN];
+bool used_vertexs[MAXN];
 
 bool try_kuhn(int v) {
-    if (used[v]) {
+    if (used_vertexs[v]) {
         return false;
     }
-    used[v] = true;
+    used_vertexs[v] = true;
     for (int i = 0; i < g[v].size(); i++) {
         int to = g[v][i];
         if (mt[to] == -1 || try_kuhn(mt[to])) {
@@ -33,7 +33,7 @@ bool try_kuhn(int v) {
 int kuhn(int n) {
     fill(mt, mt + n, -1);
     for (int v = 0; v < n; v++) {
-        fill(used, used + n, false);
+        fill(used_vertexs, used_vertexs + n, false);
         try_kuhn(v);
     }
 
@@ -48,9 +48,6 @@ int kuhn(int n) {
 }
 
 int kun_by_vasileva(const vector<vector<int>>& adj_matrix, const int& n, const int& m) {
-    for (int i = 0; i < n + m; ++i) {
-        g[i].clear(); // Очищаем каждый вектор в массиве g
-    }
     for (int i = 0; i < n + m; i++) {
         for (int j = 0; j < n + m; j++) {
             if (adj_matrix[i][j] == 1) {
@@ -60,6 +57,10 @@ int kun_by_vasileva(const vector<vector<int>>& adj_matrix, const int& n, const i
     }
 
     int max_matching = kuhn(n + m);
+
+    for (int i = 0; i < n + m; ++i) {
+        g[i].clear(); // Очищаем каждый вектор в массиве g
+    }
 
     return max_matching;
 }

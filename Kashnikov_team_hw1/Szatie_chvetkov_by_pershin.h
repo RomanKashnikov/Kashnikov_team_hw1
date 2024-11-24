@@ -6,4 +6,4 @@
 using namespace std;
 
 
-int Szatie_chvetkov_by_pershin(const vector<vector<int>>& m);
+int Szatie_chvetkov_by_pershin(const vector<vector<int>>& adj_matrix, const int& n, const int& m);

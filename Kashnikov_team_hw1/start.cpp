@@ -109,7 +109,6 @@ int main()
             cout << "Max matching:  " << kun_by_vasileva(matrix, left_half, right_half) << endl;
             break;
         case 3:
-            vivod(matrix);
             cout << "Max matching:  " << hopcrofta_carpa_by_Saitov(matrix) << endl;
             break;
         case 4:
@@ -121,12 +120,7 @@ int main()
             cout << endl << "True value: 2" << endl << endl;
             break;
         case 5:
-            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_1) << endl;
-            cout << endl << "True value: 3" << endl << endl;
-            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_2) << endl;
-            cout << endl << "True value: 2" << endl << endl;
-            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_3) << endl;
-            cout << endl << "True value: 2" << endl << endl;
+            cout << "Max matching:  " << Szatie_chvetkov_by_pershin(matrix, left_half, right_half) << endl;
             break;
         }
         cout << endl;
