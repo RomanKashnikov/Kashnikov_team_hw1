@@ -106,12 +106,12 @@ int main()
             vivod(matrix);
             break;
         case 2:
-            //cout << "Your value: " << kun_by_vasileva(test_1) << endl;
-            cout << endl << "True value: 3" << endl;
-            //cout << "Your value: " << kun_by_vasileva(test_2) << endl;
-            cout << endl << "True value: 2" << endl;
-            //cout << "Your value: " << kun_by_vasileva(test_3) << endl;
-            cout << endl << "True value: 2" << endl;
+            cout << "Your value: " << kun_by_vasileva(test_1, 3, 3) << endl;
+            cout << endl << "True value: 3" << endl << endl;
+            cout << "Your value: " << kun_by_vasileva(test_2, 3, 4) << endl;
+            cout << endl << "True value: 2" << endl << endl;
+            cout << "Your value: " << kun_by_vasileva(test_3, 2, 4) << endl;
+            cout << endl << "True value: 2" << endl << endl;
             break;
         case 3:
             //cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_1) << endl;
