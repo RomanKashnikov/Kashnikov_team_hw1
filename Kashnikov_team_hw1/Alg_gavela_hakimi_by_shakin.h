@@ -3,10 +3,7 @@
 
 #include <vector>
 
-// Функция проверки, является ли последовательность графической
-bool isGraphicalSequence(std::vector<int>& sequence);
-
-// Функция проверки, можно ли построить двудольный граф
-bool isBipartiteGraphical(std::vector<int> leftDegrees, std::vector<int> rightDegrees);
+// Объявление вашей функции для проверки графа
+int Alg_gavela_hakimi_by_shakin(const std::vector<std::vector<int>>& adjacencyMatrix);
 
 #endif // ALG_GAVELA_HAKIMI_BY_SHAKIN_H
