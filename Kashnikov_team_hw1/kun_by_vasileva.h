@@ -3,4 +3,4 @@
 
 using namespace std;
 
-int kun_by_vasileva(vector<vector<int>> adj_matrix, int n, int m);
+int kun_by_vasileva(const vector<vector<int>>& adj_matrix, const int& n, const int& m);

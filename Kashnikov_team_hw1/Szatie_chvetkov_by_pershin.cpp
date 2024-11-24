@@ -3,39 +3,12 @@
 
 using namespace std;
 
-void delete_incsid(vector<vector<int>>& mas_vector, const vector<int>& rebro);
-void opr_vector(const vector<vector<int>>& mas, vector<vector<int>>& mas_vector);
-void opr_edinich(vector<vector<int>>& mas_vector, int& edinich);
-void postroenie_parosoch(vector<vector<int>>& mas_vector, vector<vector<int>>& parosoch);
+
 
 //vector<vector<int>> m = { массив над которым работал
 //	{0,0,0,1,1,0},{0,0,0,0,1,0},{0,0,0,0,0,1},{1,0,0,0,0,0},{1,1,0,0,0,0},{0,0,1,0,0,0} 
 //};
 
-int Szatie_chvetkov_by_pershin(const vector<vector<int>>& m) {
-	vector<vector<int>> mas_vector; // количество ребер в массиве и какие они
-	opr_vector(m, mas_vector);
-	int edinich = 0;
-	opr_edinich(mas_vector, edinich); // определение "единичных" ребер , которые не будут учавствовать 
-
-	vector<int> start = mas_vector[0]; // начало цепи
-	vector <vector<int>> parosoch;
-	parosoch.push_back(start);
-	mas_vector.erase(mas_vector.begin());
-	//delete_incsid(mas_vector, parosoch[0]);		< -- (поврежденная часть кода)
-	//postroenie_parosoch(mas_vector, parosoch);
-	//cout << start[0] << start[1] << endl;
-
-
-	int end = size(parosoch);
-
-	/*for (vector<int> m : mas_vector) {
-		for (int i : m) {
-			cout << i << endl;
-		}
-	}*/
-	return edinich + end;
-}
 
 void opr_vector(const vector<vector<int>>& m, vector<vector<int>>& mas_vector) {
 	for (int i = 0; i < size(m); i++) { // определение размера массива
@@ -65,12 +38,6 @@ void opr_edinich(vector<vector<int>>& mas_vector, int& edinich) {
 	}
 }
 
-void postroenie_parosoch(vector<vector<int>>& mas_vector, vector<vector<int>>& parosoch) {
-	for (vector<int> mas : mas_vector) {
-		parosoch.push_back(mas);
-		delete_incsid(mas_vector, mas);
-	}
-}
 
 void delete_incsid(vector<vector<int>>& mas_vector, const vector<int>& rebro) {
 	int counter = 0;
@@ -80,4 +47,37 @@ void delete_incsid(vector<vector<int>>& mas_vector, const vector<int>& rebro) {
 		}
 		counter++;
 	}
+}
+
+
+void postroenie_parosoch(vector<vector<int>>& mas_vector, vector<vector<int>>& parosoch) {
+	for (vector<int> mas : mas_vector) {
+		parosoch.push_back(mas);
+		delete_incsid(mas_vector, mas);
+	}
+}
+
+
+int Szatie_chvetkov_by_pershin(const vector<vector<int>>& m) {
+	vector<vector<int>> mas_vector; // количество ребер в массиве и какие они
+	opr_vector(m, mas_vector);
+	int edinich = 0;
+	opr_edinich(mas_vector, edinich); // определение "единичных" ребер , которые не будут учавствовать 
+
+	vector<int> start = mas_vector[0]; // начало цепи
+	vector <vector<int>> parosoch;
+	parosoch.push_back(start);
+	mas_vector.erase(mas_vector.begin());
+	delete_incsid(mas_vector, parosoch[0]);
+	postroenie_parosoch(mas_vector, parosoch);
+
+
+	int end = size(parosoch);
+
+	/*for (vector<int> m : mas_vector) {
+		for (int i : m) {
+			cout << i << endl;
+		}
+	}*/
+	return edinich + end;
 }

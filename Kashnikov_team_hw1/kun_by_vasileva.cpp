@@ -47,7 +47,7 @@ int kuhn(int n) {
     return ans / 2;
 }
 
-int kun_by_vasileva(vector<vector<int>> adj_matrix, int n, int m) {
+int kun_by_vasileva(const vector<vector<int>>& adj_matrix, const int& n, const int& m) {
     for (int i = 0; i < n + m; ++i) {
         g[i].clear(); // Очищаем каждый вектор в массиве g
     }

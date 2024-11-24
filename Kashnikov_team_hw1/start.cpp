@@ -56,8 +56,8 @@ void menu() {
 
 int main()
 {
-    int first_set;
-    int second_set;
+    int left_half;
+    int right_half;
 
     vector<vector<int>> matrix;
     
@@ -98,28 +98,19 @@ int main()
         case 1:
             cout << "Enter amount of peaks" << endl << endl;
 
-            first_set = input_validation("In first set:  ", 0, 10000000);
-            second_set = input_validation("In second set:  ", 0, 10000000);
+            left_half = input_validation("In first set:  ", 0, 10000000);
+            right_half = input_validation("In second set:  ", 0, 10000000);
 
-            matrix = generateBipartiteGraphMatrix(first_set, second_set);
+            matrix = generateBipartiteGraphMatrix(left_half, right_half);
 
             vivod(matrix);
             break;
         case 2:
-            cout << "Your value: " << kun_by_vasileva(test_1, 3, 3) << endl;
-            cout << endl << "True value: 3" << endl << endl;
-            cout << "Your value: " << kun_by_vasileva(test_2, 3, 4) << endl;
-            cout << endl << "True value: 2" << endl << endl;
-            cout << "Your value: " << kun_by_vasileva(test_3, 2, 4) << endl;
-            cout << endl << "True value: 2" << endl << endl;
+            cout << "Max matching:  " << kun_by_vasileva(matrix, left_half, right_half) << endl;
             break;
         case 3:
-            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_1) << endl;
-            cout << endl << "True value: 3" << endl << endl;
-            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_2) << endl;
-            cout << endl << "True value: 2" << endl << endl;
-            cout << "Your value: " << hopcrofta_carpa_by_Saitov(test_3) << endl;
-            cout << endl << "True value: 2" << endl << endl;
+            vivod(matrix);
+            cout << "Max matching:  " << hopcrofta_carpa_by_Saitov(matrix) << endl;
             break;
         case 4:
             //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_1) << endl;
@@ -130,11 +121,11 @@ int main()
             cout << endl << "True value: 2" << endl << endl;
             break;
         case 5:
-            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_1) << endl;
+            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_1) << endl;
             cout << endl << "True value: 3" << endl << endl;
-            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_2) << endl;
+            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_2) << endl;
             cout << endl << "True value: 2" << endl << endl;
-            //cout << "Your value: " << Szatie_chvetkov_by_pershin(test_3) << endl;
+            cout << "Your value: " << Szatie_chvetkov_by_pershin(test_3) << endl;
             cout << endl << "True value: 2" << endl << endl;
             break;
         }
