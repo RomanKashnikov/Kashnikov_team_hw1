@@ -3,13 +3,16 @@
 #include <algorithm>
 #include <numeric>
 
+
+using namespace std;
+
 // Проверка, является ли последовательность графической
-bool isGraphicalSequence(std::vector<int>& sequence) {
+bool isGraphicalSequence(vector<int>& sequence) {
     // Удаляем нули
-    sequence.erase(std::remove(sequence.begin(), sequence.end(), 0), sequence.end());
+    sequence.erase(remove(sequence.begin(), sequence.end(), 0), sequence.end());
 
     // Сортируем по убыванию
-    std::sort(sequence.rbegin(), sequence.rend());
+    sort(sequence.rbegin(), sequence.rend());
 
     while (!sequence.empty()) {
         int d = sequence[0];
@@ -28,16 +31,16 @@ bool isGraphicalSequence(std::vector<int>& sequence) {
         }
 
         // Удаляем нули и сортируем оставшуюся часть
-        sequence.erase(std::remove(sequence.begin(), sequence.end(), 0), sequence.end());
-        std::sort(sequence.rbegin(), sequence.rend());
+        sequence.erase(remove(sequence.begin(), sequence.end(), 0), sequence.end());
+        sort(sequence.rbegin(), sequence.rend());
     }
     return true;
 }
 
 // Главная функция для проверки графа по матрице смежности
-int Alg_gavela_hakimi_by_shakin(const std::vector<std::vector<int>>& adjacencyMatrix) {
-    std::vector<int> leftDegrees;
-    std::vector<int> rightDegrees;
+int Alg_gavela_hakimi_by_shakin(const vector<vector<int>>& adjacencyMatrix) {
+    vector<int> leftDegrees;
+    vector<int> rightDegrees;
 
     size_t rows = adjacencyMatrix.size();
     if (rows == 0) return 0; // Если матрица пустая, возвращаем 0
@@ -46,7 +49,7 @@ int Alg_gavela_hakimi_by_shakin(const std::vector<std::vector<int>>& adjacencyMa
 
     // Подсчёт степеней для левой и правой долей
     for (size_t i = 0; i < rows; ++i) {
-        int degree = std::accumulate(adjacencyMatrix[i].begin(), adjacencyMatrix[i].end(), 0);
+        int degree = accumulate(adjacencyMatrix[i].begin(), adjacencyMatrix[i].end(), 0);
         leftDegrees.push_back(degree);
     }
 
@@ -59,8 +62,8 @@ int Alg_gavela_hakimi_by_shakin(const std::vector<std::vector<int>>& adjacencyMa
     }
 
     // Проверяем равенство сумм степеней
-    if (std::accumulate(leftDegrees.begin(), leftDegrees.end(), 0) !=
-        std::accumulate(rightDegrees.begin(), rightDegrees.end(), 0)) {
+    if (accumulate(leftDegrees.begin(), leftDegrees.end(), 0) !=
+        accumulate(rightDegrees.begin(), rightDegrees.end(), 0)) {
         return 0;
     }
 

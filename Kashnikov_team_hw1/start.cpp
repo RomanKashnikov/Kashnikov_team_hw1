@@ -8,6 +8,7 @@
 #include "hopcrofta_carpa_by_Saitov.h"
 #include "Szatie_chvetkov_by_pershin.h"
 #include "Alg_gavela_hakimi_by_shakin.h"
+#include "Alg_ford_fulkerson_by_shakin.h"
 
 
 
@@ -45,12 +46,13 @@ void vivod(vector<vector<int>> &matrix) {
 
 void menu() {
     cout << "Menu" << endl << endl;
-    cout << "1 - Generate bipartite graph" << endl << endl;
+    cout << "1 - Generate bipartite graph" << endl;
+    cout << "2 - Existence check by method Gavela Hakimi" << endl << endl;
     cout << "Methods for finding the number of matchings:" << endl;
-    cout << "2 - Kun" << endl;
-    cout << "3 - Hopcrofta Carpa" << endl;
-    cout << "4 - Gavela Hakimi" << endl;
-    cout << "5 - Szatie chvetkov" << endl << endl;
+    cout << "3 - Kun" << endl;
+    cout << "4 - Hopcrofta Carpa" << endl;
+    cout << "5 - Ford Fulkerson" << endl;
+    cout << "6 - Szatie chvetkov" << endl << endl;
     cout << "0 - Exit" << endl << endl;
 }
 
@@ -62,7 +64,7 @@ int main()
 
     vector<vector<int>> matrix;
     
-    vector<vector<int>> test_1 = { {0, 0, 0, 1, 0, 0},
+    vector<vector<int>> test_1 = { {0, 0, 0, 1, 1, 0},
                                    {0, 0, 0, 0, 1, 0},
                                    {0, 0, 0, 0, 0, 1},
                                    {1, 0, 0, 0, 0, 0},
@@ -89,7 +91,7 @@ int main()
         menu();
 
         int option;
-        option = input_validation("Choose the option:  ", 0, 5);
+        option = input_validation("Choose the option:  ", 0, 6);
         system("cls");
 
         switch (option) {
@@ -106,23 +108,28 @@ int main()
 
             vivod(matrix);
             break;
-        case 2:
-            cout << "Time:  " << time(matrix, kun_by_vasileva)*1000 << " ms" << endl;
-            break;
-        case 3:
-            cout << "Time:  " << time(matrix, hopcrofta_carpa_by_Saitov) * 1000 << " ms" << endl;
-            break;
-        case 4:
-            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_1) << endl;
-            cout << endl << "True value: 3" << endl << endl;
-            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_2) << endl;
-            cout << endl << "True value: 2" << endl << endl;
-            //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_3) << endl;
-            cout << endl << "True value: 2" << endl << endl;
-            break;
-        case 5:
-            cout << "Time:  " << time(matrix, Szatie_chvetkov_by_pershin) * 1000 << " ms" << endl;
-            break;
+        }
+        if (Alg_gavela_hakimi_by_shakin(matrix)) {
+            switch (option) {
+            case 2:
+                cout << "Time:  " << time("Existence check (1-Yes/0-No):  ", matrix, Alg_gavela_hakimi_by_shakin) * 1000 << " ms" << endl;
+                break;
+            case 3:
+                cout << "Time:  " << time("Max matching:  ", matrix, kun_by_vasileva) * 1000 << " ms" << endl;
+                break;
+            case 4:
+                cout << "Time:  " << time("Max matching:  ", matrix, hopcrofta_carpa_by_Saitov) * 1000 << " ms" << endl;
+                break;
+            case 5:
+                cout << "Time:  " << time("Max matching:  ", matrix, Alg_ford_fulkerson_by_shakin) * 1000 << " ms" << endl;
+                break;
+            case 6:
+                cout << "Time:  " << time("Max matching:  ", matrix, Szatie_chvetkov_by_pershin) * 1000 << " ms" << endl;
+                break;
+            }
+        }
+        else {
+            cout << "Matrix was not created" << endl << endl;
         }
         cout << endl;
         system("pause");

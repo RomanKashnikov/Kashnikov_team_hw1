@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Alg_ford_fulkerson_by_shakin.cpp" />
     <ClCompile Include="Alg_gavela_hakimi_by_shakin.cpp" />
     <ClCompile Include="hopcrofta_carpa_by_Saitov.cpp" />
     <ClCompile Include="kun_by_vasileva.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="Szatie_chvetkov_by_pershin.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alg_ford_fulkerson_by_shakin.h" />
     <ClInclude Include="Alg_gavela_hakimi_by_shakin.h" />
     <ClInclude Include="graph_gen_by_ordin.h" />
     <ClInclude Include="hopcrofta_carpa_by_Saitov.h" />
