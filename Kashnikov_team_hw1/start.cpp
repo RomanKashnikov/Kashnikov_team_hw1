@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+#include "time.h"
 #include "graph_gen_by_ordin.h"
 #include "kun_by_vasileva.h"
 #include "hopcrofta_carpa_by_Saitov.h"
@@ -32,7 +33,7 @@ int input_validation(const string& message, const int& min, const int& max) {
 
 
 void vivod(vector<vector<int>> &matrix) {
-    cout << "Adjacency matrix:" << endl;
+    cout << endl << "Adjacency matrix:" << endl;
     for (auto& row: matrix) {
         for (auto& value: row) {
             cout << value << " ";
@@ -106,10 +107,10 @@ int main()
             vivod(matrix);
             break;
         case 2:
-            cout << "Max matching:  " << kun_by_vasileva(matrix, left_half, right_half) << endl;
+            cout << "Time:  " << time(matrix, kun_by_vasileva)*1000 << " ms" << endl;
             break;
         case 3:
-            cout << "Max matching:  " << hopcrofta_carpa_by_Saitov(matrix) << endl;
+            cout << "Time:  " << time(matrix, hopcrofta_carpa_by_Saitov) * 1000 << " ms" << endl;
             break;
         case 4:
             //cout << "Your value: " << Alg_gavela_hakimi_by_shakin(test_1) << endl;
@@ -120,7 +121,7 @@ int main()
             cout << endl << "True value: 2" << endl << endl;
             break;
         case 5:
-            cout << "Max matching:  " << Szatie_chvetkov_by_pershin(matrix, left_half, right_half) << endl;
+            cout << "Time:  " << time(matrix, Szatie_chvetkov_by_pershin) * 1000 << " ms" << endl;
             break;
         }
         cout << endl;

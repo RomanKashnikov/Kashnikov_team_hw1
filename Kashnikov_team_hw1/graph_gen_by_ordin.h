@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#define PROBABILITY 0.2
+#define PROBABILITY 0.5
 
 std::vector<std::vector<int> > generateBipartiteGraphMatrix(const int& n1, const int& n2);
 

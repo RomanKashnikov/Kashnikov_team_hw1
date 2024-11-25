@@ -121,18 +121,18 @@ int maximumMatching(int n) {
 }
 
 // Обработка матрицы смежности
-int Szatie_chvetkov_by_pershin(const vector<vector<int>>& adj_matrix, const int& n, const int& m) {
-    for (int i = 0; i < n + m; i++) {
-        for (int j = 0; j < n + m; j++) {
+int Szatie_chvetkov_by_pershin(const vector<vector<int>>& adj_matrix) {
+    for (int i = 0; i < adj_matrix.size(); i++) {
+        for (int j = 0; j < adj_matrix.size(); j++) {
             if (adj_matrix[i][j] == 1) {
                 adj[i].push_back(j);
             }
         }
     }
 
-    int max_matching = maximumMatching(n + m);
+    int max_matching = maximumMatching(adj_matrix.size());
 
-    for (int i = 0; i < n + m; ++i) {
+    for (int i = 0; i < adj_matrix.size(); ++i) {
         adj[i].clear(); // Очищаем каждый вектор в массиве g
     }
 

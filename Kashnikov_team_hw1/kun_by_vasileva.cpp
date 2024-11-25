@@ -47,18 +47,18 @@ int kuhn(int n) {
     return ans / 2;
 }
 
-int kun_by_vasileva(const vector<vector<int>>& adj_matrix, const int& n, const int& m) {
-    for (int i = 0; i < n + m; i++) {
-        for (int j = 0; j < n + m; j++) {
+int kun_by_vasileva(const vector<vector<int>>& adj_matrix) {
+    for (int i = 0; i < adj_matrix.size(); i++) {
+        for (int j = 0; j < adj_matrix.size(); j++) {
             if (adj_matrix[i][j] == 1) {
                 g[i].push_back(j);
             }
         }
     }
 
-    int max_matching = kuhn(n + m);
+    int max_matching = kuhn(adj_matrix.size());
 
-    for (int i = 0; i < n + m; ++i) {
+    for (int i = 0; i < adj_matrix.size(); ++i) {
         g[i].clear(); // Очищаем каждый вектор в массиве g
     }
 

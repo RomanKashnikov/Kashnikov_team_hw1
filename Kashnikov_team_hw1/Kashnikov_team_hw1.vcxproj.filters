@@ -50,5 +50,8 @@
     <ClInclude Include="Szatie_chvetkov_by_pershin.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

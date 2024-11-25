@@ -140,6 +140,7 @@
     <ClInclude Include="hopcrofta_carpa_by_Saitov.h" />
     <ClInclude Include="kun_by_vasileva.h" />
     <ClInclude Include="Szatie_chvetkov_by_pershin.h" />
+    <ClInclude Include="time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
