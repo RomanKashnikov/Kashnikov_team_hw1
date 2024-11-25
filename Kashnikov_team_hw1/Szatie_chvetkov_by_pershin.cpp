@@ -1,7 +1,8 @@
-#include <queue>
 #include <cstring>
 #include <vector>
-
+#include <queue>
+#include <iostream>
+#include <set>
 
 using namespace std;
 
@@ -72,7 +73,16 @@ bool bfs(int n) {
         }
     }
 
+    int iteration_limit = n * n; // Ограничение на количество итераций
+    int iteration_count = 0;
+
     while (!q.empty()) {
+        if (++iteration_count > iteration_limit) {
+            // Если мы превысили лимит итераций, возвращаем false, чтобы предотвратить бесконечный цикл.
+            cerr << "Error: Algorithm entered an infinite loop. Stopping BFS." << endl;
+            return false;
+        }
+
         int u = q.front();
         q.pop();
         for (int v : adj[u]) {
@@ -109,6 +119,7 @@ void augmentPath(int v) {
 int maximumMatching(int n) {
     memset(match, -1, sizeof(match));
     int matching = 0;
+
     while (bfs(n)) {
         for (int i = 0; i < n; ++i) {
             if (match[i] == -1 && parent[i] != -1) {

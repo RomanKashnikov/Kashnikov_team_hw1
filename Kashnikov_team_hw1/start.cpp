@@ -47,12 +47,13 @@ void vivod(vector<vector<int>> &matrix) {
 void menu() {
     cout << "Menu" << endl << endl;
     cout << "1 - Generate bipartite graph" << endl;
-    cout << "2 - Existence check by method Gavela Hakimi" << endl << endl;
+    cout << "2 - Existence check by method Gavela Hakimi" << endl;
+    cout << "3 - Veiw adjacency matrix" << endl << endl;
     cout << "Methods for finding the number of matchings:" << endl;
-    cout << "3 - Kun" << endl;
-    cout << "4 - Hopcrofta Carpa" << endl;
-    cout << "5 - Ford Fulkerson" << endl;
-    cout << "6 - Szatie chvetkov" << endl << endl;
+    cout << "4 - Kun" << endl;
+    cout << "5 - Hopcrofta Carpa" << endl;
+    cout << "6 - Ford Fulkerson" << endl;
+    cout << "7 - Szatie chvetkov" << endl << endl;
     cout << "0 - Exit" << endl << endl;
 }
 
@@ -63,7 +64,7 @@ int main()
     int right_half;
 
     vector<vector<int>> matrix;
-    
+    /*
     vector<vector<int>> test_1 = { {0, 0, 0, 1, 1, 0},
                                    {0, 0, 0, 0, 1, 0},
                                    {0, 0, 0, 0, 0, 1},
@@ -85,13 +86,13 @@ int main()
                                    {1, 1, 0, 0, 0, 0},
                                    {0, 1, 0, 0, 0, 0},
                                    {1, 0, 0, 0, 0, 0} };
-    
+    */
     
     while (1) {
         menu();
 
         int option;
-        option = input_validation("Choose the option:  ", 0, 6);
+        option = input_validation("Choose the option:  ", 0, 7);
         system("cls");
 
         switch (option) {
@@ -105,8 +106,6 @@ int main()
             right_half = input_validation("In second set:  ", 0, 10000000);
 
             matrix = generateBipartiteGraphMatrix(left_half, right_half);
-
-            vivod(matrix);
             break;
         }
         if (Alg_gavela_hakimi_by_shakin(matrix)) {
@@ -115,15 +114,18 @@ int main()
                 cout << "Time:  " << time("Existence check (1-Yes/0-No):  ", matrix, Alg_gavela_hakimi_by_shakin) * 1000 << " ms" << endl;
                 break;
             case 3:
-                cout << "Time:  " << time("Max matching:  ", matrix, kun_by_vasileva) * 1000 << " ms" << endl;
+                vivod(matrix);
                 break;
             case 4:
-                cout << "Time:  " << time("Max matching:  ", matrix, hopcrofta_carpa_by_Saitov) * 1000 << " ms" << endl;
+                cout << "Time:  " << time("Max matching:  ", matrix, kun_by_vasileva) * 1000 << " ms" << endl;
                 break;
             case 5:
-                cout << "Time:  " << time("Max matching:  ", matrix, Alg_ford_fulkerson_by_shakin) * 1000 << " ms" << endl;
+                cout << "Time:  " << time("Max matching:  ", matrix, hopcrofta_carpa_by_Saitov) * 1000 << " ms" << endl;
                 break;
             case 6:
+                cout << "Time:  " << time("Max matching:  ", matrix, Alg_ford_fulkerson_by_shakin) * 1000 << " ms" << endl;
+                break;
+            case 7:
                 cout << "Time:  " << time("Max matching:  ", matrix, Szatie_chvetkov_by_pershin) * 1000 << " ms" << endl;
                 break;
             }
