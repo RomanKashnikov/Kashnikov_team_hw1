@@ -39,3 +39,22 @@ void generateGraphvizFile(std::vector<std::vector<int> >& matrix, string fileNam
     file.close();
 
 }
+
+vector<vector<int>> getMatrixFromFile(std::string fileName) {
+    vector<vector<int>> matrix;
+    ifstream file(fileName);
+
+    int value;
+    vector<int> row;
+    while (file >> value) {
+        row.push_back(value);
+
+        if (file.peek() == '\n' || file.eof()) {
+            matrix.push_back(row);
+            row.clear();
+        }
+    }
+
+    file.close();
+    return matrix;
+}
