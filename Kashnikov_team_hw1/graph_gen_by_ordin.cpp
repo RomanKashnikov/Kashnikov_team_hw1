@@ -31,7 +31,7 @@ void generateGraphvizFile(std::vector<std::vector<int> >& matrix, string fileNam
     for(size_t i = 0; i < matrix.size(); i++) {
         for(size_t q = i; q < matrix[i].size(); q++) {
             if (matrix[i][q] != 0) {
-                file << (char)'a'+i << "--" << (char)'a'+q << '\n'; 
+                file << (char)('a'+i) << "--" << (char)('a'+q) << '\n'; 
             }
         }
     }
